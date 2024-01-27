@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bai 1</title>
+</head>
+<body>
+</body>
+<script>
+    function timDiemCaoThuBa(diem) {
+        if (diem.length < 3) {
+            document.write("Không đủ số");
+            return;
+        }
+        let diemCaoNhat = diem[0];
+        let diemCaoThuHai = diem[1];
+        let diemCaoThuBa = diem[2];
+
+        for (let i = 3; i < diem.length; i++) {
+            if (diem[i] > diemCaoNhat) {
+                diemCaoThuBa = diemCaoThuHai;
+                diemCaoThuHai = diemCaoNhat;
+                diemCaoNhat = diem[i];
+            } else if (diem[i] > diemCaoThuHai) {
+                diemCaoThuBa = diemCaoThuHai;
+                diemCaoThuHai = diem[i];
+            } else if (diem[i] > diemCaoThuBa) {
+                diemCaoThuBa = diem[i];
+            }
+        }
+        document.write("Điểm cao thứ 3 là: " + diemCaoThuBa);
+    }
+    let diemThi = [85, 90, 78, 92, 88, 75, 95, 89];
+    timDiemCaoThuBa(diemThi);
+</script>
+</html>

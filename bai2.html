@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Bai 2</title>
+</head>
+<body>
+</body>
+<script>
+  function tryRemoveFromArray(arr, index) {
+    if (index >= 0 && index < arr.length) {
+      for (let i = index; i < arr.length - 1; i++) {
+        arr[i] = arr[i + 1];
+      }
+      arr.length--;
+    }
+    return arr;
+  }
+  let mang = [1, 2, 3, 4, 5];
+  let viTriXoa = 2;
+
+  document.write("Mảng ban đầu: " + mang + '<br>');
+  let mangSauKhiXoa = tryRemoveFromArray(mang, viTriXoa);
+  document.write("Mảng sau khi xóa phần tử tại vị trí " + viTriXoa + ": " + mangSauKhiXoa);
+
+</script>
+</html>
